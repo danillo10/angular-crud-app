@@ -1,0 +1,11 @@
+<div [formGroup]="formData">
+  <input *ngIf="tipo == 'default'" [id]="control" type="text" [formControlName]="control">
+
+  <input *ngIf="tipo == 'currency'"
+    currencyMask
+    [id]="control"
+    [name]="control"
+    type="text"
+    [formControlName]="control"
+  >
+</div>

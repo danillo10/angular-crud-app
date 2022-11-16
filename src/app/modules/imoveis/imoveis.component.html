@@ -1,0 +1,28 @@
+<div>
+  <div id="cadastrar">
+    <button (click)="new()">
+      Novo Imóvel
+    </button>
+  </div>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Valor</th>
+      <th>Acões</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let imovel of imoveis">
+        <td>{{ imovel.id }}</td>
+        <td>{{ imovel.nome }}</td>
+        <td>{{ imovel.tipo }}</td>
+        <td>{{ imovel.valor | currency:'BRL':'' }}</td>
+        <td>
+          <a [routerLink]="['/imoveis/edit']" [queryParams]="{id: imovel.id}">Editar</a>
+          <button (click)="destroy(imovel)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

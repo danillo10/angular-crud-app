@@ -1,0 +1,35 @@
+<form [formGroup]="imovelForm">
+
+  <label for="first-name">Nome: </label>
+  <app-input
+    [formData]="imovelForm"
+    control="nome"
+    tipo="default"
+  ></app-input>
+
+  <br>
+  <br>
+
+  <label for="last-name">Tipo: </label>
+  <app-select
+    [formData]="imovelForm"
+    control="tipo"
+    [data]="tipo"
+  ></app-select>
+
+  <br>
+  <br>
+
+  <label for="first-name">Valor: </label>
+  <app-input
+    [formData]="imovelForm"
+    control="valor"
+    tipo="currency"
+  ></app-input>
+
+  <br>
+  <br>
+
+  <button (click)="store()" [disabled]="imovelForm.invalid">Salvar</button>
+
+</form>
